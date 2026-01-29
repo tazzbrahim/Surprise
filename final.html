@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(160deg,#f2f1ee,#dad8d3);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Inter',sans-serif;
+  color:#2f2f2f;
+  overflow:hidden;
+}
+
+/* CONTAINER */
+.final{
+  text-align:center;
+  padding:32px 20px;
+}
+
+/* TEXT */
+.opening{
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;
+  opacity:0;
+  animation:fadeIn 1.2s ease forwards;
+  animation-delay:1.5s;
+}
+
+.main{
+  margin-top:24px;
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  font-weight:600;
+  line-height:1.4;
+  opacity:0;
+  animation:fadeIn 1.2s ease forwards;
+  animation-delay:3s;
+}
+
+.sub{
+  margin-top:20px;
+  font-size:.95rem;
+  opacity:.85;
+  opacity:0;
+  animation:fadeIn 1.2s ease forwards;
+  animation-delay:4.5s;
+}
+
+/* CONFETTI */
+.confetti{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.confetti span{
+  position:absolute;
+  top:-10px;
+  width:6px;
+  height:14px;
+  background:rgba(0,0,0,.15);
+  animation:fall linear infinite;
+}
+
+.confetti span:nth-child(odd){
+  height:10px;
+  opacity:.4;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+  to{opacity:1}
+}
+
+/* MOBILE */
+@media(max-width:480px){
+  .main{font-size:1.6rem}
+}
+</style>
+</head>
+
+<body>
+
+<div class="final">
+  <div class="opening">hari ini tentang kamu.</div>
+
+  <div class="main">
+    selamat ulang tahun
+  </div>
+
+  <div class="sub">
+    semoga kamu selalu bahagia dan sehat selalu,<br>
+    dan semoga aku tetap bisa ada di dalam ceritamu.
+  </div>
+</div>
+
+<!-- Confetti -->
+<div class="confetti" id="confetti"></div>
+
+<script>
+const confetti = document.getElementById('confetti');
+
+for(let i=0;i<25;i++){
+  const c = document.createElement('span');
+  c.style.left = Math.random()*100 + '%';
+  c.style.animationDuration = (6 + Math.random()*6) + 's';
+  c.style.animationDelay = Math.random()*4 + 's';
+  confetti.appendChild(c);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For You</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(160deg,#f2f1ee,#dedcd7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Inter',sans-serif;
+  color:#2f2f2f;
+}
+
+/* LETTER WRAP */
+.letter-wrap{
+  width:min(92vw,560px);
+  padding:40px 28px;
+}
+
+/* PAPER */
+.paper{
+  background:#fdfbf7;
+  border-radius:16px;
+  padding:48px 36px;
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
+
+/* TITLE */
+.title{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;
+  font-weight:600;
+  margin-bottom:28px;
+}
+
+/* PARAGRAPHS */
+p{
+  font-size:.95rem;
+  line-height:1.8;
+  margin-bottom:22px;
+  opacity:0;
+  transform:translateY(10px);
+  animation:fadeIn .8s ease forwards;
+}
+
+p:nth-of-type(1){animation-delay:1.2s}
+p:nth-of-type(2){animation-delay:2.2s}
+p:nth-of-type(3){animation-delay:3.2s}
+p:nth-of-type(4){animation-delay:4.2s}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* SIGN */
+.signature{
+  margin-top:32px;
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;
+  opacity:0;
+  animation:fadeIn .8s ease forwards;
+  animation-delay:3.8s;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:36px;
+  text-align:center;
+  opacity:0;
+  animation:fadeIn .8s ease forwards;
+  animation-delay:4.6s;
+}
+
+button{
+  padding:10px 28px;
+  border:none;
+  border-radius:999px;
+  background:#2f2f2f;
+  color:#fff;
+  font-size:.9rem;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.85;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* MOBILE */
+@media(max-width:480px){
+  .paper{padding:36px 24px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="letter-wrap">
+  <div class="paper">
+
+    <div class="title">untuk kamu</div>
+
+    <p>
+      aku menulis ini tanpa banyak rencana.  
+      tidak ada kalimat yang ingin terdengar sempurna,  
+      hanya ingin jujur tentang apa yang aku rasakan.
+    </p>
+
+    <p>
+      ada banyak hal sederhana tentang kamu  
+      yang tanpa sadar menjadi bagian penting dalam hariku.  
+      cara kamu berbicara, caramu peduli,  
+      dan caramu hadir tanpa perlu berusaha berlebihan.
+    </p>
+
+    <p>
+      aku tidak tahu bagaimana cerita ini akan berjalan ke depan,  
+      tapi aku tahu satu hal  
+      aku bersyukur bisa mengenalmu,  
+      dan bisa merayakan hari ini bersamamu.
+    </p>
+
+    <p>
+      di hari ulang tahunmu ini,  
+      aku hanya berharap kamu selalu dikelilingi oleh hal-hal  
+      yang membuatmu merasa dicintai dan dihargai,  
+      termasuk olehku.
+    </p>
+
+    <div class="signature">
+      dengan perasaan yang tulus,<br>
+      ruru
+    </div>
+
+    <div class="footer">
+      <button onclick="goNext()">One Last Thing</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function goNext(){
+  window.location.href = 'final.html'; // ganti sesuai halaman akhir
+}
+</script>
+
+</body>
+</html>

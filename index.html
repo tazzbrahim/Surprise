@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;background:#FAF9F6;font-family:Inter;text-align:center}
+#transition{position:fixed;inset:0;background:#FAF9F6;opacity:0;pointer-events:none;transition:.5s;z-index:9999}
+#transition.show{opacity:1}
+.fade{opacity:0;transform:translateY(12px);animation:fadeUp 1s ease forwards}
+.d1{animation-delay:.3s}.d2{animation-delay:.6s}.d3{animation-delay:.9s}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+h1{font-family:'Playfair Display';font-size:32px;margin:0}
+p{opacity:.85}
+#count{font-size:28px;letter-spacing:4px;margin:20px 0}
+button{padding:12px 28px;border-radius:30px;border:1px solid #C6A27E;background:none;color:#C6A27E;cursor:pointer;opacity:0;transition:.6s}
+button.show{opacity:1}
+</style>
+</head>
+<body>
+<div id="transition"></div>
+
+<div>
+  <h1 class="fade d1">hai, <span style="color:#C6A27E">rara</span>.</h1>
+  <p class="fade d2">untuk seseorang yang lahir hari ini…</p>
+  <div id="count" class="fade d3">00 : 00 : 05</div>
+  <button id="start" onclick="go('game.html')">mulai perjalanan</button>
+</div>
+
+<script>
+let t=5; const c=document.getElementById('count'), b=document.getElementById('start');
+const timer=setInterval(()=>{ t--; c.textContent=`00 : 00 : 0${t}`;
+  if(t===0){ clearInterval(timer); c.textContent="aku buat ini khusus untuk kamu."; b.classList.add('show');}
+},1000);
+function go(url){const t=document.getElementById('transition'); t.classList.add('show'); setTimeout(()=>location.href=url,500);}
+</script>
+</body>
+</html>
